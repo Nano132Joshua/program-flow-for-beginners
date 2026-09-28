@@ -1,9 +1,10 @@
-const answer = `
+const answer =`
 flowchart TD
-	A("Start") --> B["Boil water"]
-	B["Boil water"] --> C["Brew coffee"]
-	C["Brew coffee"] --> D["Serve coffee"]
-	E("End")
+        Start("Start") --> A["A"]
+		A --> B["B"]
+		B --> C["C"]
+		C --> D["D"]
+		D --> end("End")
 `;
 
-module.exports = answer.trim();
+GPUShaderModule.exports = answer.trim();

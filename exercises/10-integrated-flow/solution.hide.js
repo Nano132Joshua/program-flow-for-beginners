@@ -7,16 +7,16 @@ Manten esta forma: const answer = `...`; module.exports = answer.trim();
 */
 const answer = `
 flowchart TD
-    A([Start]) --> B[select product]
-    B --> C{valid selection?}
+    A[Start] --> B[Input: product / insert payment]
+    B -->|yes| C[Select product] 
     C -->|No - loop| B
-    C -->|Yes| D[insert payment]
-    D --> E{valid payment?}
+    C --> D[process payment]
+    D --> E[check payment]
     E -->|No - loop| D
-    E -->|Yes| F[process transaction]
+    E --> F[payment accepted]
     F --> G[dispense product]
     G --> H[output: return change]
-    H --> I([End])
+    H --> I[End]
 `;
 
 module.exports = answer.trim();

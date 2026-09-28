@@ -11,12 +11,14 @@ Manten esta forma: const answer = `...`; module.exports = answer.trim();
 
 const answer = `
 flowchart TD
-    A["Start"] --> B["Age"]
-    B["Age"] --> C{"Age >= 18"}
-    C{"Age >= 18"} -->|Yes| D["You can drink alcohol"]
-    C{"Age >= 18"} -->|No| E["You cannot drink alcohol"]
-    D["You can drink alcohol"] --> F["end"]
-    E["You cannot drink alcohol"] --> F["end"]
+    start("start") --> A["Input"]
+    A --> B["Validate"]
+    B --> C{"Valid?"}
+    C -->|Yes| D["valid"]
+    C -->|No| E["Invalid"]
+    D --> F["Finish"]
+    E --> F
+    E --> end("end")
 `;
 
 // Do not modify this

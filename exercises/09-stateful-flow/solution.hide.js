@@ -7,13 +7,13 @@ Manten esta forma: const answer = `...`; module.exports = answer.trim();
 */
 const answer = `
 flowchart LR
-    A(["Start"]) --> B["State: Locked"]
-    B["State: Locked"] -->|Event: push| B["State: Locked"]
-    B["State: Locked"] -->|Event: coin| C["State: Unlocked"]
-    C["State: Unlocked"] -->|Event: coin| C["State: Unlocked"]
-    C["State: Unlocked"] -->|Event: push| D["Allow Pass / Rotate"]
-    D["Allow Pass / Rotate"] --> B["State: Locked"]
-    B["State: Locked"] --> E(["End"])
+    A[Start] --> B[Locked]
+    B -->|Event: coin| C[Unlocked]
+    B -->|Event: push| B
+    C -->|Event: push| D[Output: allow pass / rotate]
+    C -->|Event: coin| C
+    D --> B
+    B --> E[End]
 `;
 
 module.exports = answer.trim();
